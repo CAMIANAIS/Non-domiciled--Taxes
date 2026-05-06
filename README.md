@@ -32,17 +32,18 @@ In alignment with the standards for the **Agentic Software Engineer** program, t
 ## 📦 Installation
 ```bash
 npm install
-
+```
 ##🏗️ Build
 ```bash
 npm run build
+```
 ##🖥️ Usage
 
 Run Calculation Example
 
 ```bash
 npm start
-
+```
 ## Export CSV for CONTASIS
 
 The generated file follows the specific columns required for ERP import: Date, Supplier, RUC, Voucher, Currency, TaxBase, Retention%, RetentionAmount, NetToPay, Description.
@@ -58,7 +59,7 @@ The project includes a validation suite for critical scenarios:
 
 ```bash
 npx ts-node src/tests/engine.test.ts
-
+```
 ##Banking Validation: Ensures credit card payments result in $0 retention.
 
 IGV Validation: Confirms the automatic 18% IGV (Utilización de Servicios) calculation.
