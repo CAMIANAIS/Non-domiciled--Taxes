@@ -1,49 +1,149 @@
-# Peru Retention Engine (TypeScript)
+Peru Retention Engine (TypeScript Edition) 🇵🇪 ⚙️
+A professional rule engine designed to automate tax retention calculations for non-resident (foreign) suppliers in Peru. This project bridges the gap between financial accounting logic and modern software engineering, developed under an Agentic Software Engineering workflow.  
++1
 
-Proyecto en TypeScript para calcular retenciones en Peru y exportar resultados a CSV compatible con la importacion de CONTASIS.
+🚀 Value Proposition
+Elimination of Human Error: Automates the application of specific tax rates (15%, 24%, 30%) based on SUNAT regulations.
 
-## Reglas implementadas
+Regulatory Compliance: Automatically identifies benefits from Double Taxation Treaties (CAN) and banking exceptions (Credit Card payments).Peru Retention Engine (TypeScript Edition) 🇵🇪 ⚙️
+A professional rule engine designed to automate tax retention calculations for non-resident (foreign) suppliers in Peru. This project bridges the gap between financial accounting logic and modern software engineering, developed under an Agentic Software Engineering workflow.  
++1
 
-- 0% de retencion si el medio de pago es tarjeta (`CARD`).
-- 0% de retencion para operaciones CAN cuando hay certificado (`isCAN=true` y `hasCANCertificate=true`).
-- 15% a 30% segun tipo de servicio:
-  - `GENERAL_SERVICE`: 15%
-  - `PROFESSIONAL_SERVICE`: 20%
-  - `TECHNICAL_SERVICE`: 30%
+🚀 Value Proposition
+Elimination of Human Error: Automates the application of specific tax rates (15%, 24%, 30%) based on SUNAT regulations.
 
-## Instalacion
+Regulatory Compliance: Automatically identifies benefits from Double Taxation Treaties (CAN) and banking exceptions (Credit Card payments).
 
-```bash
+Operational Efficiency: Drastically reduces the processing time for international invoices from providers like Oracle or foreign professional services.  
+
+🛠️ Tech Stack
+Language: TypeScript (Node.js) for strict typing and asynchronous reliability.
+
+Architecture: Clean Architecture (Domain-Driven Design) to ensure business rules remain independent of output technology.  
+
+Environment: Developed entirely on macOS using Cursor.
+
+🤖 Agentic Workflow (AI-Assisted Development)
+In alignment with the standards for the Agentic Software Engineer program, this repository documents the use of generative AI tools:
+
+Cursor Composer: Used for initial scaffolding and complex TypeScript type refactoring.
+
+Agent Mode: Leveraged AI capabilities to execute terminal tests, diagnose compilation errors, and autonomously suggest tsconfig.json fixes.
+
+Knowledge Graph Integration: Development was guided by a Markdown-based log system (docs/knowledge-graph) which provided context for the AI to understand business rules extracted from expert accounting interviews.
+
+⚖️ Implemented Business Rules
+Scenario	Tax Rate	Legal Basis / Logic
+Credit Card Payment	0%	Banking exception (Bancarización directa).
+CAN Treaty (CO/BO)	0%	Decision 578 CAN (with Residency Certificate).
+Digital Services	30%	Standard rate for software/subscriptions (e.g., Oracle).
+Professional Services	24%	Standard rate for non-resident individuals (Professors).
+Technical Assistance	15%	Reduced rate for qualified technical services.
+📦 Installation
+Bash
 npm install
-```
-
-## Compilar
-
-```bash
+🏗️ Build
+Bash
 npm run build
-```
+🖥️ Usage
+Run Calculation Example
 
-## Ejecutar ejemplo de calculo
-
-```bash
+Bash
 npm start
-```
+Export CSV for CONTASIS
 
-## Exportar CSV para CONTASIS
+Place your vouchers in data/input.json (array of RetentionInput objects).
 
-1. Coloca los comprobantes en `data/input.json` (array de objetos `RetentionInput`).
-2. Ejecuta:
+Execute the exporter:
 
-```bash
+Bash
 npm run build
 npm run export:contasis
-```
+Alternatively, specify paths:
 
-Opcionalmente puedes indicar rutas:
-
-```bash
+Bash
 node dist/exportContasisCsv.js ./data/input.json ./data/contasis-retentions.csv
-```
+Output Columns: Date, Supplier, RUC, Voucher, Currency, TaxBase, Retention%, RetentionAmount, NetToPay, Description.
 
-El archivo generado contiene las columnas:
-`Fecha, Proveedor, RUC, Comprobante, Moneda, BaseImponible, PorcentajeRetencion, MontoRetencion, NetoPagar, Glosa`.
+🧪 Unit Testing
+The project includes a validation suite for critical scenarios:
+
+Bash
+npx ts-node src/tests/engine.test.ts
+Banking Validation: Ensures credit card payments result in $0 retention.
+
+IGV Validation: Confirms the automatic 18% IGV (Utilización de Servicios) calculation.
+
+📈 Roadmap
+CONTASIS Adapter: Full automation of Excel templates for direct ERP import.
+
+Gemini API Integration: Automatic service classification by analyzing invoice descriptions using LLMs.  
+
+Audit Module: Generation of support documentation for tax authority (SUNAT) audits.
+
+Operational Efficiency: Drastically reduces the processing time for international invoices from providers like Oracle or foreign professional services.  
+
+🛠️ Tech Stack
+Language: TypeScript (Node.js) for strict typing and asynchronous reliability.
+
+Architecture: Clean Architecture (Domain-Driven Design) to ensure business rules remain independent of output technology.  
+
+Environment: Developed entirely on macOS using Cursor.
+
+🤖 Agentic Workflow (AI-Assisted Development)
+In alignment with the standards for the Agentic Software Engineer program, this repository documents the use of generative AI tools:
+
+Cursor Composer: Used for initial scaffolding and complex TypeScript type refactoring.
+
+Agent Mode: Leveraged AI capabilities to execute terminal tests, diagnose compilation errors, and autonomously suggest tsconfig.json fixes.
+
+Knowledge Graph Integration: Development was guided by a Markdown-based log system (docs/knowledge-graph) which provided context for the AI to understand business rules extracted from expert accounting interviews.
+
+⚖️ Implemented Business Rules
+Scenario	Tax Rate	Legal Basis / Logic
+Credit Card Payment	0%	Banking exception (Bancarización directa).
+CAN Treaty (CO/BO)	0%	Decision 578 CAN (with Residency Certificate).
+Digital Services	30%	Standard rate for software/subscriptions (e.g., Oracle).
+Professional Services	24%	Standard rate for non-resident individuals (Professors).
+Technical Assistance	15%	Reduced rate for qualified technical services.
+📦 Installation
+Bash
+npm install
+🏗️ Build
+Bash
+npm run build
+🖥️ Usage
+Run Calculation Example
+
+Bash
+npm start
+Export CSV for CONTASIS
+
+Place your vouchers in data/input.json (array of RetentionInput objects).
+
+Execute the exporter:
+
+Bash
+npm run build
+npm run export:contasis
+Alternatively, specify paths:
+
+Bash
+node dist/exportContasisCsv.js ./data/input.json ./data/contasis-retentions.csv
+Output Columns: Date, Supplier, RUC, Voucher, Currency, TaxBase, Retention%, RetentionAmount, NetToPay, Description.
+
+🧪 Unit Testing
+The project includes a validation suite for critical scenarios:
+
+Bash
+npx ts-node src/tests/engine.test.ts
+Banking Validation: Ensures credit card payments result in $0 retention.
+
+IGV Validation: Confirms the automatic 18% IGV (Utilización de Servicios) calculation.
+
+📈 Roadmap
+CONTASIS Adapter: Full automation of Excel templates for direct ERP import.
+
+Gemini API Integration: Automatic service classification by analyzing invoice descriptions using LLMs.  
+
+Audit Module: Generation of support documentation for tax authority (SUNAT) audits.
