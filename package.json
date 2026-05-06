@@ -1,0 +1,23 @@
+{
+  "name": "peru-retention-engine",
+  "version": "1.0.0",
+  "description": "Motor de retenciones para Peru con exportacion CSV compatible con CONTASIS.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "export:contasis": "node dist/exportContasisCsv.js"
+  },
+  "keywords": [
+    "typescript",
+    "retention",
+    "peru",
+    "contasis"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "typescript": "^5.9.3"
+  }
+}

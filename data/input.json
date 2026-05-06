@@ -1,0 +1,41 @@
+[
+  {
+    "date": "2026-05-01",
+    "supplierName": "Consultores Andinos SAC",
+    "supplierTaxId": "20600000001",
+    "voucherNumber": "F001-000101",
+    "currency": "PEN",
+    "description": "Servicio profesional de consultoria",
+    "amount": 5000,
+    "paymentMethod": "BANK_TRANSFER",
+    "serviceType": "PROFESSIONAL_SERVICE",
+    "isCAN": false,
+    "hasCANCertificate": false
+  },
+  {
+    "date": "2026-05-02",
+    "supplierName": "Soluciones Norte SAC",
+    "supplierTaxId": "20600000002",
+    "voucherNumber": "F001-000102",
+    "currency": "PEN",
+    "description": "Servicio tecnico especializado",
+    "amount": 8000,
+    "paymentMethod": "CARD",
+    "serviceType": "TECHNICAL_SERVICE",
+    "isCAN": false,
+    "hasCANCertificate": false
+  },
+  {
+    "date": "2026-05-03",
+    "supplierName": "Proveedor CAN SRL",
+    "supplierTaxId": "20600000003",
+    "voucherNumber": "F001-000103",
+    "currency": "PEN",
+    "description": "Servicio general bajo acuerdo CAN",
+    "amount": 7000,
+    "paymentMethod": "BANK_TRANSFER",
+    "serviceType": "GENERAL_SERVICE",
+    "isCAN": true,
+    "hasCANCertificate": true
+  }
+]

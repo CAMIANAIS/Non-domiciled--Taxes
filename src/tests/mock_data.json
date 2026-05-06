@@ -1,0 +1,42 @@
+[
+    {
+      "id": "CASE-01",
+      "supplierName": "Oracle Cloud",
+      "country": "US",
+      "amount": 1000,
+      "paymentMethod": "CARD",
+      "serviceType": "DIGITAL_SERVICE",
+      "hasCANCertificate": false,
+      "description": "Suscripción mensual de base de datos"
+    },
+    {
+      "id": "CASE-02",
+      "supplierName": "Oracle Cloud",
+      "country": "US",
+      "amount": 5000,
+      "paymentMethod": "BANK_TRANSFER",
+      "serviceType": "DIGITAL_SERVICE",
+      "hasCANCertificate": false,
+      "description": "Licencias anuales de software"
+    },
+    {
+      "id": "CASE-03",
+      "supplierName": "Profesor Juan Pérez",
+      "country": "CO",
+      "amount": 2000,
+      "paymentMethod": "BANK_TRANSFER",
+      "serviceType": "PROFESSIONAL_SERVICE",
+      "hasCANCertificate": true,
+      "description": "Dictado de curso especializado - CAN"
+    },
+    {
+      "id": "CASE-04",
+      "supplierName": "Consultora Tech MX",
+      "country": "MX",
+      "amount": 3000,
+      "paymentMethod": "BANK_TRANSFER",
+      "serviceType": "PROFESSIONAL_SERVICE",
+      "hasCANCertificate": false,
+      "description": "Asesoría profesional externa"
+    }
+  ]

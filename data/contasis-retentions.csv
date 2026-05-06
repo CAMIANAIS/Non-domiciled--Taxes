@@ -1,0 +1,4 @@
+"Fecha","Proveedor","RUC","Comprobante","Moneda","BaseImponible","PorcentajeRetencion","MontoRetencion","NetoPagar","Glosa"
+"2026-05-01","Consultores Andinos SAC","20600000001","F001-000101","PEN","5000.00","20.00","1000.00","4000.00","Servicio profesional de consultoria"
+"2026-05-02","Soluciones Norte SAC","20600000002","F001-000102","PEN","8000.00","0.00","0.00","8000.00","Servicio tecnico especializado"
+"2026-05-03","Proveedor CAN SRL","20600000003","F001-000103","PEN","7000.00","0.00","0.00","7000.00","Servicio general bajo acuerdo CAN"
